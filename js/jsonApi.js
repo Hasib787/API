@@ -1,7 +1,7 @@
-document.getElementById('submit').addEventListener('click', function(){
+document.getElementById('submit').addEventListener('click', function () {
     const title = document.getElementById('title').value;
     const bodyContent = document.getElementById('bodyContent').value;
-    const post = {title: title, body: bodyContent};
+    const post = { title: title, body: bodyContent };
     nowPostToServer(post);
 
 })
@@ -15,7 +15,8 @@ function nowPostToServer(postInfo) {
         },
     })
         .then((response) => response.json())
-        .then((data) => console.log(data));
+        .then((data) => console.log(data))
+        .catch(error => alert('Please try again later.'));
 
 }
 
